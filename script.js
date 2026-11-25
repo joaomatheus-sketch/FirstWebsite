@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+   document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('#page-content');
     const sidebar = document.querySelector('#sidebar');
     const dialog = document.querySelector('.app-dialog');
@@ -272,6 +273,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 stat('Voluntários ativos no mês', '28', 'De 36 voluntários cadastrados', '♧', { page: 'voluntarios', label: 'Participaram de pelo menos 1 ação' }),
                 stat('Alimentos disponíveis', `${stockTotal()} kg`, `${stockRows.length} alimentos cadastrados · consumo de 31 kg/dia`, '◇', { page: 'estoque', label: `${stockAlerts().length} itens precisam de reposição` })
             )}
+            ${panel('Vídeo do projeto', `
+                <div class="video-wrap">
+                    <iframe
+                        src="https://www.youtube.com/embed/923SEOAy_AA"
+                        title="Progeto do Figma Gestão do Bem"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            `, { subtitle: 'Conheça a demonstração da plataforma Gestão do Bem.', action: '<a class="panel-action" href="https://youtu.be/923SEOAy_AA" target="_blank" rel="noopener noreferrer">Assistir no YouTube ↗</a>' })}
             <div class="content-grid">
                 ${panel('Estoque de alimentos', table(
                     ['Alimento', 'Disponível', 'Consumo diário', 'Duração', 'Situação'],
